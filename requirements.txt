@@ -1,0 +1,6 @@
+beautifulsoup4
+requests
+gspread
+google-auth
+selenium
+os
