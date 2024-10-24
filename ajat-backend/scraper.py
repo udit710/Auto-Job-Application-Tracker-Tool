@@ -29,8 +29,6 @@ def scrape_job_description(job_link):
     
     # Only for LinkedIn
     if 'linkedin' in job_link:
-        driver.get('https://www.linkedin.com/login')
-        time.sleep(2) # load page
 
         email = os.getenv('PORTALUSERNAME')
         password = os.getenv('PORTALPASSWORD')
