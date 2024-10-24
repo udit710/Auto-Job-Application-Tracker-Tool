@@ -20,7 +20,6 @@ function App() {
         },
       });
 
-      // Assuming your Flask API returns a message
       setMessage(response.data.message);
     } catch (error) {
       console.error('There was an error processing the job link!', error);
