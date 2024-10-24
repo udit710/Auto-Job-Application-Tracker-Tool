@@ -1,0 +1,7 @@
+
+/ajat-backend/.env
+/ajat-backend/job_description.txt
+/ajat-backend/venv
+/ajat-backend/chromedriver-*
+/ajat-backend/credentials.json
+/__pycache__/
