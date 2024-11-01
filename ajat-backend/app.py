@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS, cross_origin
 from scraper import scrape_job_description
 from summarize_description import summarize_description
@@ -6,6 +6,10 @@ from update_sheet import update_sheet
 
 app = Flask(__name__)
 CORS(app, resources={r"/process-job": {"origins": "http://localhost:3000"}})
+
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 @app.route('/process-job', methods=['POST'])
 def process_job():

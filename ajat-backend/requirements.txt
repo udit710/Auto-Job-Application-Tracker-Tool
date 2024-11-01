@@ -11,3 +11,4 @@ google-auth-oauthlib
 pandas
 flask-cors
 python-dotenv
+gunicorn
