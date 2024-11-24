@@ -1,4 +1,5 @@
 import os
+import config
 import google.generativeai as genai
 
 def summarize_description(description):

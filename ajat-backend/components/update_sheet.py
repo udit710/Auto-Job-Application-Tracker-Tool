@@ -5,6 +5,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pandas as pd
 import datetime
+import config
 
 def update_sheet(genData, link):
 
@@ -33,6 +34,8 @@ def update_sheet(genData, link):
         "Response?":""
         }
 
+    # print(data)
+    
     df = pd.concat([df, pd.DataFrame([data])], ignore_index=True)
 
     # Update the Google Sheet
