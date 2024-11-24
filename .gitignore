@@ -4,4 +4,4 @@
 /ajat-backend/venv
 /ajat-backend/chromedriver-*
 /ajat-backend/credentials.json
-/ajat-backend/__pycache__/
+*.pyc
