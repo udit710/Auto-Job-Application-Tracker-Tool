@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS, cross_origin
-from components.scraper import scrape_job_description
-from components.summarize_description import summarize_description
-from components.update_sheet import update_sheet
+from components.application_tracker.scraper import scrape_job_description
+from components.application_tracker.summarize_description import summarize_description
+from components.application_tracker.update_sheet import update_sheet
+from components.keyword_extracter.keyword_extracter import extract_keyword
 
 app = Flask(__name__)
 CORS(app, resources={r"/process-job": {"origins": "http://localhost:3000"}})
@@ -30,6 +31,21 @@ def process_job():
         print(f"Error: {e}")  # Print error for debugging
         return jsonify({"error": str(e)}), 500
 
+@app.route('/extract-keywords', methods=['POST'])
+def extract_keywords():
+    data = request.get_json()
+    description = data.get("description")
+    
+    try:
+        if not description:
+            raise ValueError("No description provided")
+        
+        keywords = extract_keyword(description)
+        
+        return jsonify({"keywords": keywords})
+    
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     app.run(debug=True)
