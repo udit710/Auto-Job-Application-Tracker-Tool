@@ -3,9 +3,12 @@
 ## Overview  
 **Auto Job Application Tracker (AJAT)** is a lightweight automation tool designed to streamline the process of tracking job applications. It uses web scraping to extract job details, summarizes the data using Generative AI, and updates a central spreadsheet for easy management and tracking.
 
+**Keyword Extracter** is another tool that extracts the top keywords from a job description.
+
 ### Features  
 - **Web Scraping**: Automatically extracts job-related data from portals.  
-- **Generative AI Integration**: Summarizes extracted data for quick review.  
+- **Generative AI Integration**: Summarizes extracted data for quick review and also used in keyword extraction.
+- **Keyword Extracter**: Extracts top keywords from a job description.
 - **Spreadsheet Integration**: Updates job details on a centralized Google Sheet.  
 - **User-Friendly Interface**: Powered by Flask (backend) and React (frontend).  
 - **Scalable Architecture**: Utilizes Google Spreadsheets and can use AWS EC2 for reliable data storage and deployment.  
@@ -26,7 +29,7 @@
 
 ### Prerequisites  
 - Python 3.11.7
-- NPM 20.0.0
+- Node 20.15.1
 - AWS account for EC2 setup
 - ChromeDriver (for web scraping)  
 - GenAI API key
